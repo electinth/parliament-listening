@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
+import Avatar from "../components/avatar"
 
 const IndexPage = () => (
   <Layout>
@@ -22,11 +23,13 @@ const IndexPage = () => (
       <div>
         <input type="text" placeholder="ค้นหาจากชื่อ"/>
       </div>
-      <div>25 กรกฏาคม 2562</div>
-      <ul>
-        <li>นายพูดเก่ง ชอบอภิปราย</li>
-        <li>นายชอบ ประถ้วง</li>
-      </ul>
+      <div>
+        <h2>25 กรกฏาคม 2562</h2>
+        <ul>
+          <li><Avatar/>นายพูดเก่ง ชอบอภิปราย</li>
+          <li><Avatar/>นายชอบ ประถ้วง</li>
+        </ul>
+      </div>
     </div>
   </Layout>
 )
