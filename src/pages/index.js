@@ -1,13 +1,39 @@
-import React from "react"
-import { Link } from "gatsby"
+import React, {useState, useEffect} from "react"
+
+import axios from "axios"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
-import Avatar from "../components/avatar"
+import TopKList from "../components/top_k_list"
+import DayList from "../components/day_list"
 
-const IndexPage = () => (
-  <Layout>
+const datasets = [
+  {
+    name: "25-26 ก.ค. 2562 แถลงนโยบาย​ฯ",
+    file: "/data/25-26-07-2019.json"
+  }
+]
+
+const IndexPage = () => {
+  const [dataset, setDataset] = useState(datasets[0])
+  const [data, setData] = useState({})
+  const [nameFilter, setNameFilter] = useState("")
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios(dataset.file)
+      setData(result.data)
+    };
+    fetchData();
+  }, [dataset])
+
+  const onKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      setNameFilter(event.target.value)
+    }
+  }
+
+  return <Layout>
     <SEO title="Home" />
     <div style={{fontSize: "1.2em"}}>
       <select>
@@ -16,22 +42,32 @@ const IndexPage = () => (
         </option>
       </select>
     </div>
-    <div style={{borderBottom: "1px dotted black"}}>
-      <h2>สถิติต่างๆ</h2>
-    </div>
-    <div>
-      <div>
-        <input type="text" placeholder="ค้นหาจากชื่อ"/>
-      </div>
-      <div>
-        <h2>25 กรกฏาคม 2562</h2>
-        <ul>
-          <li><Avatar/>นายพูดเก่ง ชอบอภิปราย</li>
-          <li><Avatar/>นายชอบ ประถ้วง</li>
-        </ul>
-      </div>
-    </div>
+    {
+      data.statistics &&
+      <>
+        <div style={{borderBottom: "1px dotted black"}}>
+          <h2>สถิติต่างๆ</h2>
+          <div>เวลาที่ใช้ทั้งหมด {data.statistics.total_duration}</div>
+          <div>เวลาประท้วงทั้งหมด {data.statistics.total_opposing_duration}</div>
+          <TopKList title="พูดนานสุด" list={data.statistics.top_debaters}/>
+          <TopKList title="ประท้วง" list={data.statistics.top_opposers}/>
+        </div>
+        <div>
+          <div>
+            <input type="text" 
+              defaultValue={nameFilter}
+              placeholder="ค้นหาจากชื่อ"
+              onKeyDown={onKeyDown}
+            /> <i>(กด Enter เพื่อค้นหา)</i>
+          </div>
+          {
+            data.dates.map(d => <DayList data={d} nameFilter={nameFilter}/>)
+          }
+        </div>
+      </>
+
+    }
   </Layout>
-)
+}
 
 export default IndexPage
