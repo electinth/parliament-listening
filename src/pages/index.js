@@ -9,7 +9,7 @@ import DayList from "../components/day_list"
 
 const datasets = [
   {
-    name: "25-26 ก.ค. 2562 แถลงนโยบาย​ฯ",
+    name: "(ยังไม่เสร็จ) 25-26 ก.ค. 2562 แถลงนโยบาย​ฯ",
     file: "/data/25-26-07-2019.json"
   }
 ]
@@ -37,9 +37,7 @@ const IndexPage = () => {
     <SEO title="Home" />
     <div style={{fontSize: "1.2em"}}>
       <select>
-        <option>
-          25-26 ก.ค.​ แถลงนโยบาย
-        </option>
+        {datasets.map(d => <option key={d.name} value={d.file}>{d.name}</option>)}
       </select>
     </div>
     {
