@@ -8,13 +8,26 @@ import SEO from "../components/seo"
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
+    <div style={{fontSize: "1.2em"}}>
+      <select>
+        <option>
+          25-26 ก.ค.​ แถลงนโยบาย
+        </option>
+      </select>
     </div>
-    <Link to="/page-2/">Go to page 2</Link>
+    <div style={{borderBottom: "1px dotted black"}}>
+      <h2>สถิติต่างๆ</h2>
+    </div>
+    <div>
+      <div>
+        <input type="text" placeholder="ค้นหาจากชื่อ"/>
+      </div>
+      <div>25 กรกฏาคม 2562</div>
+      <ul>
+        <li>นายพูดเก่ง ชอบอภิปราย</li>
+        <li>นายชอบ ประถ้วง</li>
+      </ul>
+    </div>
   </Layout>
 )
 
