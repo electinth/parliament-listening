@@ -19,7 +19,7 @@ const DayList = ({data, nameFilter=""}) => {
                             href={appendQuery(data.videos[e.video_ix], {t: e.start_second})}
                             target="_blank"
                         >
-                            <Avatar src={e.name}/> {e.name} ({e.type}, {e.duration})
+                            <Avatar src={e.name}/> {e.name} ({e.type}, {e.duration} วินาที)
                         </a>
                     </li>
                 })

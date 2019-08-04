@@ -9,7 +9,7 @@ const TopKList = ({title, list}) => {
             {
                 list.map(p => {
                     return <li key={p.name}>
-                        <Avatar src={p.name}/> {p.name} ({p.duration})
+                        <Avatar src={p.name}/> {p.name} ({p.duration} วินาที)
                     </li>
                 })
             }
