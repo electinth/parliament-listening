@@ -45,7 +45,7 @@ const IndexPage = () => {
       <>
         <div style={{borderBottom: "1px dotted black"}}>
           <h2>สถิติต่างๆ</h2>
-          <div>เวลาที่ใช้ทั้งหมด {data.statistics.total_duration}</div>
+          <div>เวลาที่ใช้ทั้งหมด {data.statistics.total_duration_no_chairman}</div>
           <div>เวลาประท้วงทั้งหมด {data.statistics.total_opposing_duration}</div>
           <TopKList title="พูดนานสุด" list={data.statistics.top_debaters}/>
           <TopKList title="ประท้วง" list={data.statistics.top_opposers}/>
