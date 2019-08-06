@@ -44,7 +44,7 @@ const IndexPage = () => {
     {
       data.statistics &&
       <>
-        <div style={{borderBottom: "1px dotted black"}}>
+        <div>
           <h2>สรุปเวลาการประชุม</h2>
           <div>
             <StatBox>
@@ -65,16 +65,24 @@ const IndexPage = () => {
             <div style={{height: "1.5rem", width: "100%", clear: "both"}}></div>
             <StatBox>
               <PartyCard title={`พรรคอภิปรายเยอะที่สุด`} partyName="พรรคผ่อน" duration={1300}/>
+            </StatBox>
+            <StatBox>
               <PartyCard title={`พรรคประท้วงเยอะที่สุด`} partyName="พรรครบ" duration={2400}/>
             </StatBox>
             <StatBox>
-              <TopKList title="พูดนานสุด" list={data.statistics.top_debaters}/>
-              <TopKList title="ประท้วง" list={data.statistics.top_opposers}/>
+              <TopKList title="สายอภิปราย" list={data.statistics.top_debaters}/>
             </StatBox>
-            <div style={{clear: "both"}}></div>
+            <StatBox>
+              <TopKList title="สายประท้วง" list={data.statistics.top_opposers}/>
+            </StatBox>
+            <div style={{
+              clear: "both", width: "100%",
+              height: "2px", background: "black"
+              }}>
+            </div>
           </div>
         </div>
-        <div>
+        <div style={{marginTop: "20px"}}>
           <ControlBox namePlaceholder={nameFilter}
             onNameSearch={(n) => setNameFilter(n)}
           />

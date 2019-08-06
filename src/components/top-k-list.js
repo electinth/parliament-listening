@@ -1,15 +1,24 @@
 import React from 'react'
 
 import Avatar from "./avatar"
+import TimeLabel from "./time-label"
 
 const TopKList = ({title, list}) => {
     return <div>
         <b>{title}</b>
-        <ul>
+        <ul style={{listStyle: "none", padding: "0px", margin: "0px"}}>
             {
                 list.map(p => {
                     return <li key={p.name}>
-                        <Avatar src={p.name}/> {p.name} ({p.duration} วินาที)
+                        <div style={{float: "left", marginRight: "5px"}}>
+                            <Avatar src={p.name}/>
+                        </div>
+                        <div>
+                            <b>{p.name}</b> <br/>
+                            {`Party ABC, `}
+                            <TimeLabel duration={p.duration}/>
+                        </div>
+                        <div style={{clear: "both"}}></div>
                     </li>
                 })
             }
