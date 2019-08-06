@@ -6,12 +6,13 @@ import config from "../config"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import StatBox from "../components/stat-box"
 
 import TopKList from "../components/top-k-list"
 import DayList from "../components/day-list"
 import ControlBox from "../components/control-box"
 import PortionBar from "../components/portion-bar"
-
+import PartyCard from "../components/party-card"
 
 const IndexPage = () => {
   const [dataset, setDataset] = useState(config.datasets[0])
@@ -45,25 +46,33 @@ const IndexPage = () => {
       <>
         <div style={{borderBottom: "1px dotted black"}}>
           <h2>สรุปเวลาการประชุม</h2>
-          <div style={{width: "47.5%", marginRight: "2.5%", float: "left"}}>
-            <PortionBar
-              leftLabel="รัฐบาล" rightLabel="ฝ่ายค้าน"
-              leftDuration={7200} rightDuration={8000}
-              leftColor="#0E64B9" rightColor="#E1161F"
-            />
+          <div>
+            <StatBox>
+              <PortionBar
+                leftLabel="รัฐบาล" rightLabel="ฝ่ายค้าน"
+                leftDuration={7200} rightDuration={8000}
+                leftColor="#0E64B9" rightColor="#E1161F"
+              />
+            </StatBox>
+            <StatBox>
+              <PortionBar
+                leftLabel="อภิปราย" rightLabel="ประท้วง"
+                leftDuration={data.statistics.total_duration_no_chairman}
+                rightDuration={data.statistics.total_opposing_duration}
+                leftColor="#FFFFFF" rightColor="#000000"
+              />
+            </StatBox>
+            <div style={{height: "1.5rem", width: "100%", clear: "both"}}></div>
+            <StatBox>
+              <PartyCard title={`พรรคอภิปรายเยอะที่สุด`} partyName="พรรคผ่อน" duration={1300}/>
+              <PartyCard title={`พรรคประท้วงเยอะที่สุด`} partyName="พรรครบ" duration={2400}/>
+            </StatBox>
+            <StatBox>
+              <TopKList title="พูดนานสุด" list={data.statistics.top_debaters}/>
+              <TopKList title="ประท้วง" list={data.statistics.top_opposers}/>
+            </StatBox>
+            <div style={{clear: "both"}}></div>
           </div>
-          <div style={{width: "47.5%", marginLeft: "2.5%", float: "left"}}>
-            <PortionBar
-              leftLabel="อภิปราย" rightLabel="ประท้วง"
-              leftDuration={data.statistics.total_duration_no_chairman}
-              rightDuration={data.statistics.total_opposing_duration}
-              leftColor="#FFFFFF" rightColor="#000000"
-            />
-          </div>
-          <div>เวลาที่ใช้ทั้งหมด {data.statistics.total_duration_no_chairman}</div>
-          <div>เวลาประท้วงทั้งหมด {data.statistics.total_opposing_duration}</div>
-          <TopKList title="พูดนานสุด" list={data.statistics.top_debaters}/>
-          <TopKList title="ประท้วง" list={data.statistics.top_opposers}/>
         </div>
         <div>
           <ControlBox namePlaceholder={nameFilter}
