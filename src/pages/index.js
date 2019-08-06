@@ -2,6 +2,8 @@ import React, {useState, useEffect} from "react"
 
 import axios from "axios"
 
+import config from "../config"
+
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -9,15 +11,9 @@ import TopKList from "../components/top-k-list"
 import DayList from "../components/day-list"
 import ControlBox from "../components/control-box"
 
-const datasets = [
-  {
-    name: "(ยังไม่เสร็จ) 25-26 ก.ค. 2562 แถลงนโยบาย​ฯ",
-    file: "/data/25-26-07-2019.json"
-  }
-]
 
 const IndexPage = () => {
-  const [dataset, setDataset] = useState(datasets[0])
+  const [dataset, setDataset] = useState(config.datasets[0])
   const [data, setData] = useState({})
   const [nameFilter, setNameFilter] = useState("")
 
@@ -33,7 +29,11 @@ const IndexPage = () => {
     <SEO title="Home" />
     <div style={{fontSize: "1.2em"}}>
       <select>
-        {datasets.map(d => <option key={d.name} value={d.file}>{d.name}</option>)}
+        {
+          config.datasets.map(d => {
+            return <option key={d.name} value={d.file}>{d.name}</option>
+          })
+        }
       </select>
     </div>
     {
