@@ -1,8 +1,6 @@
 import React from 'react'
 
-const width = 60
-
-const Avatar = ({src}) => {
+const Avatar = ({src, width=60}) => {
     return <img src={`https://i.pravatar.cc/300?ss=${src}`} style={{
         borderRadius: width, width: width, verticalAlign: "middle"
     }}/>
