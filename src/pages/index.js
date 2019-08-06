@@ -28,6 +28,9 @@ const IndexPage = () => {
   return <Layout>
     <SEO title="Home" />
     <div style={{fontSize: "1.2em"}}>
+      {
+        // @todo #2 style the selector acccording to the design
+      }
       <select>
         {
           config.datasets.map(d => {
