@@ -4,8 +4,10 @@ import axios from "axios"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import TopKList from "../components/top_k_list"
-import DayList from "../components/day_list"
+
+import TopKList from "../components/top-k-list"
+import DayList from "../components/day-list"
+import ControlBox from "../components/control-box"
 
 const datasets = [
   {
@@ -13,8 +15,6 @@ const datasets = [
     file: "/data/25-26-07-2019.json"
   }
 ]
-
-// @todo #2 test pdd
 
 const IndexPage = () => {
   const [dataset, setDataset] = useState(datasets[0])
@@ -28,12 +28,6 @@ const IndexPage = () => {
     };
     fetchData();
   }, [dataset])
-
-  const onKeyDown = (event) => {
-    if (event.key === 'Enter') {
-      setNameFilter(event.target.value)
-    }
-  }
 
   return <Layout>
     <SEO title="Home" />
@@ -53,13 +47,9 @@ const IndexPage = () => {
           <TopKList title="ประท้วง" list={data.statistics.top_opposers}/>
         </div>
         <div>
-          <div>
-            <input type="text" 
-              defaultValue={nameFilter}
-              placeholder="ค้นหาจากชื่อ"
-              onKeyDown={onKeyDown}
-            /> <i>(กด Enter เพื่อค้นหา)</i>
-          </div>
+          <ControlBox namePlaceholder={nameFilter}
+            onNameSearch={(n) => setNameFilter(n)}
+          />
           {
             data.dates.map(d => <DayList data={d} nameFilter={nameFilter}/>)
           }
