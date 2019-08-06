@@ -10,6 +10,9 @@ const DayList = ({data, nameFilter=""}) => {
         return e.name.match(rx)
     })
     return <div>
+        {
+            // @todo #2 use proper format for date i.e. 25 ก.ค. 2562
+        }
         <h3>{data.name} ({events.length} ครั้ง)</h3>
         <ul style={{listStyle: "none"}}>
             {
