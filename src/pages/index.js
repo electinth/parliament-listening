@@ -27,7 +27,7 @@ const IndexPage = () => {
 
   return <Layout>
     <SEO title="Home" />
-    <div style={{fontSize: "1.2em"}}>
+    <h2>
       {
         // @todo #2 style the selector acccording to the design
       }
@@ -38,12 +38,12 @@ const IndexPage = () => {
           })
         }
       </select>
-    </div>
+    </h2>
     {
       data.statistics &&
       <>
         <div style={{borderBottom: "1px dotted black"}}>
-          <h2>สถิติต่างๆ</h2>
+          <h2>สรุปเวลาการประชุม</h2>
           <div>เวลาที่ใช้ทั้งหมด {data.statistics.total_duration_no_chairman}</div>
           <div>เวลาประท้วงทั้งหมด {data.statistics.total_opposing_duration}</div>
           <TopKList title="พูดนานสุด" list={data.statistics.top_debaters}/>
