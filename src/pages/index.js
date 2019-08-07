@@ -87,7 +87,7 @@ const IndexPage = () => {
             onNameSearch={(n) => setNameFilter(n)}
           />
           {
-            data.dates.map(d => <DayList data={d} nameFilter={nameFilter}/>)
+            data.dates.map(d => <DayList key={d.name} data={d} nameFilter={nameFilter}/>)
           }
         </div>
       </>
