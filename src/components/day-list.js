@@ -11,14 +11,14 @@ import ControlBox from './control-box';
 
 
 const EventCard = ({
-      name, description, eventType,
+      name, description, isGovTeam, eventType,
       duration, videoUrl, isChairman
     }) => {
     const color = isChairman ? "white": "black"
     const background = isChairman ? "black": "white"
     return <div style={{
       width: "100%",
-      border: "2px solid",
+      border: "2px solid black",
       borderTopRightRadius: "5px",
       borderBottomRightRadius: "5px",
       color: color,
@@ -27,9 +27,9 @@ const EventCard = ({
       <div style={{padding: "5px", position: "relative"}}>
           <div style={{
             float: "left",
-            width: "10px",
+            width: isChairman ? `0`: `10px`,
             height: "100%",
-            background: eventType === `อภิปราย` ? `#0E64B9` : `#E1161F`,
+            background: isGovTeam ? `#0E64B9` : `#E1161F`,
             position: "absolute",
             top: 0,
             left: 0
@@ -103,8 +103,9 @@ const DayList = ({data}) => {
                         >
                         <EventCard
                             name={e.name}
-                            description={`some paty`}
-                            eventType={e.type}
+                            description={e.eventDescription}
+                            isGovTeam={e.team === `ฝ่ายรัฐบาล` || e.category === `cabinet` || e.category === `senate`}
+                            eventType={e.eventType}
                             duration={e.duration}
                             isChairman={e.is_chairman}
                             videoUrl={appendQuery(data.videos[e.video_ix], {t: e.start_second})}

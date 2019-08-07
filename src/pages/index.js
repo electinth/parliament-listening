@@ -13,6 +13,7 @@ import DayList from "../components/day-list"
 import ControlBox from "../components/control-box"
 import PortionBar from "../components/portion-bar"
 import PartyCard from "../components/party-card"
+import TimeLabel from "../components/time-label";
 
 const IndexPage = () => {
   const [dataset, setDataset] = useState(config.datasets[0])
@@ -42,28 +43,40 @@ const IndexPage = () => {
       <>
         <div>
           <h2>สรุปเวลาการประชุม</h2>
+          <h3 style={{textAlign: "center"}}>
+            <TimeLabel duration={data.statistics.total_duration}/>
+          </h3>
           <div>
             <StatBox>
               <PortionBar
                 leftLabel="รัฐบาล" rightLabel="ฝ่ายค้าน"
-                leftDuration={7200} rightDuration={8000}
+                leftDuration={data.statistics.total_gov_team_duration}
+                rightDuration={data.statistics.total_opposition_team_duration}
                 leftColor="#0E64B9" rightColor="#E1161F"
               />
             </StatBox>
             <StatBox>
               <PortionBar
                 leftLabel="อภิปราย" rightLabel="ประท้วง"
-                leftDuration={data.statistics.total_duration_no_chairman}
+                leftDuration={data.statistics.total_debate_duration}
                 rightDuration={data.statistics.total_opposing_duration}
                 leftColor="#FFFFFF" rightColor="#000000"
               />
             </StatBox>
             <div style={{height: "1.5rem", width: "100%", clear: "both"}}></div>
             <StatBox>
-              <PartyCard title={`พรรคอภิปรายเยอะที่สุด`} partyName="พรรคผ่อน" duration={1300}/>
+              <PartyCard
+                title={`พรรคอภิปรายเยอะที่สุด`}
+                partyName={data.statistics.top_debate_party[0].party}
+                duration={data.statistics.top_debate_party[0].duration}
+              />
             </StatBox>
             <StatBox>
-              <PartyCard title={`พรรคประท้วงเยอะที่สุด`} partyName="พรรครบ" duration={2400}/>
+              <PartyCard
+                title={`พรรคประท้วงเยอะที่สุด`}
+                partyName={data.statistics.top_opposing_party[0].party}
+                duration={data.statistics.top_opposing_party[0].duration}
+              />
             </StatBox>
             <StatBox>
               <TopKList title="สายอภิปราย" list={data.statistics.top_debaters}/>
@@ -79,9 +92,7 @@ const IndexPage = () => {
           </div>
         </div>
         <div style={{marginTop: "20px"}}>
-          {
-            data.dates.slice(0, 1).map(d => <DayList key={d.name} data={d}/>)
-          }
+            <DayList data={data}/>
         </div>
       </>
 

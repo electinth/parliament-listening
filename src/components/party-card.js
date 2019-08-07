@@ -2,7 +2,10 @@ import React from 'react'
 
 import TimeLabel from "./time-label"
 
-const dummyPartyLogo = `https://raw.githubusercontent.com/codeforthailand/dataset-election-62-candidates/master/election62/statics/party-logos/dummy.png`
+const partyLogoURL = (name) => {
+  return `https://elect.in.th/candidates/statics/party-logos/${name}.png`
+}
+
 const PartyCard = ({
     title="Talkative Party",
     partyName="Party ABC",
@@ -17,7 +20,7 @@ const PartyCard = ({
           marginRight: "10px",
           marginBottom: "0px",
         }}
-        src={dummyPartyLogo}
+        src={partyLogoURL(partyName)}
       />
     </span>
     <span>
