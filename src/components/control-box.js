@@ -5,6 +5,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 const ControlBox = ({
       namePlaceholder,
       onNameSearch,
+      defaultChairmanFilter,
       onSelectedChairmanChange,
     }) => {
   const onKeyDown = (event) => {
@@ -13,7 +14,7 @@ const ControlBox = ({
     }
   }
 
-  const [selectedChairman, setSelectedChairman] = useState(true)
+  const [selectedChairman, setSelectedChairman] = useState(defaultChairmanFilter)
 
   return <div style={{
       display: "table",

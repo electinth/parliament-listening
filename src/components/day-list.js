@@ -67,14 +67,13 @@ const thai_date = (str) => {
 
 const DayList = ({data}) => {
     const [nameFilter, setNameFilter] = useState("")
-    const [selectedChairman, setSelectedChairman] = useState(true)
+    const [chairmanFilter, setChairmanFilter] = useState(false)
     const [events, setEvents] = useState([])
-
 
     useEffect(() => {
       const rx = new RegExp(nameFilter)
       const filteredEvents = data.events.filter(e => {
-        if(selectedChairman){
+        if(chairmanFilter){
           return e.name.match(rx)
         } else{
           return e.name.match(rx) && !e.is_chairman
@@ -82,7 +81,7 @@ const DayList = ({data}) => {
       })
 
       setEvents(filteredEvents)
-    }, [nameFilter, selectedChairman])
+    }, [nameFilter, chairmanFilter])
 
     return <div style={{marginTop: "10px"}}>
         <h2 style={{margin: 0}}>
@@ -90,8 +89,9 @@ const DayList = ({data}) => {
         </h2>
         <ControlBox
           namePlaceholder={nameFilter}
+          defaultChairmanFilter={chairmanFilter}
           onNameSearch={(n) => setNameFilter(n)}
-          onSelectedChairmanChange={(v) => setSelectedChairman(v)}
+          onSelectedChairmanChange={(v) => setChairmanFilter(v)}
         />
         <ul style={{listStyle: "none", margin: "0px"}}>
             {
