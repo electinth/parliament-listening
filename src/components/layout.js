@@ -36,7 +36,7 @@ const Layout = ({ children }) => {
           padding: `1rem 1.0875rem 1.45rem`,
         }}
       >
-        <h1>{data.site.siteMetadata.title} (เวอร์ชั่นทดสอบ)</h1>
+        <h1>{data.site.siteMetadata.title}</h1>
         <main>{children}</main>
         <footer>
           {
