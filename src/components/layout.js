@@ -9,7 +9,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-// @todo #2 use elect font
+import GlobalStyle from '../shared/css/globalStyles'
+
 import "./layout.css"
 
 const Layout = ({ children }) => {
@@ -25,6 +26,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      <GlobalStyle/>
       <div
         style={{
           margin: `0 auto`,
