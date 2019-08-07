@@ -105,7 +105,7 @@ const DayList = ({data}) => {
                             name={e.name}
                             description={e.eventDescription}
                             isGovTeam={e.team === `ฝ่ายรัฐบาล` || e.category === `cabinet` || e.category === `senate`}
-                            eventType={e.eventType}
+                            eventType={e.type}
                             duration={e.duration}
                             isChairman={e.is_chairman}
                             videoUrl={appendQuery(data.videos[e.video_ix], {t: e.start_second})}
