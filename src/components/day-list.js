@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretSquareRight } from '@fortawesome/free-regular-svg-icons'
@@ -7,6 +7,7 @@ import appendQuery from 'append-query'
 
 import Avatar from "./avatar"
 import TimeLabel from './time-label';
+import ControlBox from './control-box';
 
 
 const EventCard = ({
@@ -64,13 +65,34 @@ const thai_date = (str) => {
   return `${+dmy[0]} ${short_months[+dmy[1]]} ${+dmy[2] + 543}`;
 }
 
-const DayList = ({data, nameFilter=""}) => {
-    const rx = new RegExp(nameFilter)
-    const events = data.events.filter(e => {
-        return e.name.match(rx)
-    })
+const DayList = ({data}) => {
+    const [nameFilter, setNameFilter] = useState("")
+    const [chairmanFilter, setChairmanFilter] = useState(false)
+    const [events, setEvents] = useState([])
+
+    useEffect(() => {
+      const rx = new RegExp(nameFilter)
+      const filteredEvents = data.events.filter(e => {
+        if(chairmanFilter){
+          return e.name.match(rx)
+        } else{
+          return e.name.match(rx) && !e.is_chairman
+        }
+      })
+
+      setEvents(filteredEvents)
+    }, [nameFilter, chairmanFilter])
+
     return <div style={{marginTop: "10px"}}>
-        <h2>ไทม์ไลน์การประชุมสภาฯ วันที่ {thai_date(data.name.trim())}</h2>
+        <h2 style={{margin: 0}}>
+          ไทม์ไลน์การประชุมสภาฯ วันที่ {thai_date(data.name.trim())}
+        </h2>
+        <ControlBox
+          namePlaceholder={nameFilter}
+          defaultChairmanFilter={chairmanFilter}
+          onNameSearch={(n) => setNameFilter(n)}
+          onSelectedChairmanChange={(v) => setChairmanFilter(v)}
+        />
         <ul style={{listStyle: "none", margin: "0px"}}>
             {
                 events.map( (e, i) => {
