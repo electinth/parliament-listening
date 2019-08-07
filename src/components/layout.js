@@ -12,6 +12,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import GlobalStyle from '../shared/css/globalStyles'
 
 import "./layout.css"
+import Header from "./header";
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -27,6 +28,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <GlobalStyle/>
+      <Header/>
       <div
         style={{
           margin: `0 auto`,
