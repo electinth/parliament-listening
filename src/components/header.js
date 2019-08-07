@@ -3,6 +3,7 @@ import "./header.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookF, faTwitter } from '@fortawesome/free-brands-svg-icons'
 
+// @todo #2 social buttons are quite large while initially loading.
 
 const Header = () => {
   return <header class="site-header">
