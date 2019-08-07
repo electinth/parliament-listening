@@ -30,10 +30,7 @@ const IndexPage = () => {
   return <Layout>
     <SEO title="Home" />
     <h2>
-      {
-        // @todo #2 style the selector acccording to the design
-      }
-      <select>
+      <select style={{border: "0px", color: "#E1161F", background: "white"}}>
         {
           config.datasets.map(d => {
             return <option key={d.name} value={d.file}>{d.name}</option>
