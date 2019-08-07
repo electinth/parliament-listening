@@ -39,6 +39,9 @@ const Layout = ({ children }) => {
         <h1>{data.site.siteMetadata.title}</h1>
         <main>{children}</main>
         <footer>
+          {
+            // @todo #2 update footer
+          }
           © {new Date().getFullYear()}, Built with
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
