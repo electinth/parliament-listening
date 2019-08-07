@@ -1,18 +1,35 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
-
-// @todo #2 implement control box (name search & filter)
-const ControlBox = ({namePlaceholder, onNameSearch}) => {
+const ControlBox = ({
+      namePlaceholder,
+      onNameSearch,
+      onSelectedChairmanChange,
+    }) => {
   const onKeyDown = (event) => {
     if (event.key === 'Enter') {
       onNameSearch(event.target.value)
     }
   }
-  return <div style={{display: "table", fontWeight: "bold", width: "100%"}}>
+
+  const [selectedChairman, setSelectedChairman] = useState(true)
+
+  return <div style={{
+      display: "table",
+      fontWeight: "bold",
+      width: "100%",
+      margin: "20px 0px"
+    }}>
     <span style={{display: "table-cell", verticalAlign: "middle"}}>
-        <input type="checkbox"/> ประธานสภา
+        <input type="checkbox"
+          style={{marginRight: "5px"}}
+          checked={selectedChairman}
+          onChange={() => {
+            const newValue = !selectedChairman
+            setSelectedChairman(newValue)
+            onSelectedChairmanChange(newValue)
+          }}/>ประธานสภา
     </span>
     <span style={{float: "right", display: "table-cell"}}>
       <i style={{

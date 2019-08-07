@@ -17,7 +17,6 @@ import PartyCard from "../components/party-card"
 const IndexPage = () => {
   const [dataset, setDataset] = useState(config.datasets[0])
   const [data, setData] = useState({})
-  const [nameFilter, setNameFilter] = useState("")
 
   useEffect(() => {
     const fetchData = async () => {
@@ -80,11 +79,8 @@ const IndexPage = () => {
           </div>
         </div>
         <div style={{marginTop: "20px"}}>
-          <ControlBox namePlaceholder={nameFilter}
-            onNameSearch={(n) => setNameFilter(n)}
-          />
           {
-            data.dates.map(d => <DayList key={d.name} data={d} nameFilter={nameFilter}/>)
+            data.dates.slice(0, 1).map(d => <DayList key={d.name} data={d}/>)
           }
         </div>
       </>
