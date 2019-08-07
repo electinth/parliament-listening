@@ -58,16 +58,19 @@ const EventCard = ({
     </div>
 }
 
+const short_months = ["", "ม.ค.", "ก.พ.", "มี.ค.", "เม.ย.", "พ.ค.", "มิ.ย.", "ก.ค.", "ส.ค.", "ก.ย.", "ต.ค.", "พ.ย.", "ธ.ค."];
+const thai_date = (str) => {
+  const dmy = str.split("-"); // NOTE the date string must be "dd-mm-yyyy"
+  return `${+dmy[0]} ${short_months[+dmy[1]]} ${+dmy[2] + 543}`;
+}
+
 const DayList = ({data, nameFilter=""}) => {
     const rx = new RegExp(nameFilter)
     const events = data.events.filter(e => {
         return e.name.match(rx)
     })
     return <div style={{marginTop: "10px"}}>
-        {
-            // @todo #2 use proper format for date i.e. 25 ก.ค. 2562
-        }
-        <h2>ไทม์ไลน์การประชุมสภาฯ วันที่ {data.name.trim()}</h2>
+        <h2>ไทม์ไลน์การประชุมสภาฯ วันที่ {thai_date(data.name.trim())}</h2>
         <ul style={{listStyle: "none", margin: "0px"}}>
             {
                 events.map( (e, i) => {
