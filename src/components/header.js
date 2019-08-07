@@ -2,7 +2,7 @@ import React from 'react'
 import "./header.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookF, faTwitter } from '@fortawesome/free-brands-svg-icons'
-import A from "../components/a"
+
 
 const Header = () => {
   return <header class="site-header">
@@ -20,12 +20,12 @@ const Header = () => {
               margin: "5px 0",
             }}>
               <div class="social">
-                <A href="https://www.facebook.com/electinth">
+                <a href="https://www.facebook.com/electinth">
                   <FontAwesomeIcon icon={faFacebookF}/>
-                </A>
-                <A href="https://twitter.com/electinth">
+                </a>
+                <a href="https://twitter.com/electinth">
                   <FontAwesomeIcon icon={faTwitter}/>
-                </A>
+                </a>
               </div>
             </div>
             <div style={{clear: "both"}}></div>
