@@ -1,7 +1,7 @@
 import React from 'react'
 import TimeLabel from "./time-label"
 
-const Bar = ({percentage, height="16px", color}) => {
+const Bar = ({percentage, height="17px", color}) => {
   return <div
     style={{
       display: `inline-block`,
