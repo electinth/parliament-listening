@@ -19,7 +19,7 @@ const Header = () => {
               float: "right",
               margin: "5px 0",
             }}>
-              <div class="social">
+              <div class="social" style={{fontSize: "1rem"}}>
                 <a href="https://www.facebook.com/electinth">
                   <FontAwesomeIcon icon={faFacebookF}/>
                 </a>
