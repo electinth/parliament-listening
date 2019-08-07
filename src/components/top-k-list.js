@@ -15,7 +15,7 @@ const TopKList = ({title, list}) => {
                         </div>
                         <div>
                             <b>{p.name}</b> <br/>
-                            {`Party ABC, `}
+                            {`${p.party} `}
                             <TimeLabel duration={p.duration}/>
                         </div>
                         <div style={{clear: "both"}}></div>
