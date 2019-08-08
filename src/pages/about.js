@@ -18,8 +18,25 @@ const ContributorSection = ({ name, contributors }) => {
     <div style={{ marginBottom: 16 }}>
       <h3 style={{ margin: 0 }}>{name}</h3>
       {contributors
-        .map(a => renderPerson(a))
-        .reduce((prev, curr) => [prev, ", ", curr])}
+      .map(a => renderPerson(a))
+      .reduce((prev, curr) => [prev, ", ", curr])}
+    </div>
+  )
+}
+
+const GroupedContributorSection = ({ name, contributors }) => {
+  return (
+    <div style={{ marginBottom: 16 }}>
+      <h3 style={{ margin: 0 }}>{name}</h3>
+      {contributors.map(({ date, persons}) => {
+        return (
+          <div>
+            - {date}: {persons
+                .map(a => renderPerson(a))
+                .reduce((prev, curr) => [prev, ", ", curr])}
+          </div>
+        )
+      })}
     </div>
   )
 }
@@ -38,6 +55,10 @@ const AboutPage = () => (
       <ContributorSection
         name="เขียนโปรแกรม 💻"
         contributors={contributors.coders}
+      />
+      <GroupedContributorSection
+        name="ผู้บันทึกเวลา ⌛"
+        contributors={contributors.annotators}
       />
       <ContributorSection
         name="ออกแบบ 🎨"

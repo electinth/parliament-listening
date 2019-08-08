@@ -1,4 +1,34 @@
 {
+  "annotators": [
+    {
+      "date": "25-07-2019",
+      "persons": [
+        {
+          "name": "ภัทรวัต ช่อไม้",
+          "role": "annotators",
+          "url": "http://pat.chormai.org/#!",
+          "github": "heytitle\r"
+        },
+        {
+          "name": "อรรณวุฒิ ลีไพศาลสุวรรณา",
+          "role": "coders",
+          "url": "https://unnawut.com",
+          "github": "unnawut\r"
+        }
+      ]
+    },
+    {
+      "date": "26-07-2019",
+      "persons": [
+        {
+          "name": "ภัทรวัต ช่อไม้",
+          "role": "annotators",
+          "url": "http://pat.chormai.org/#!",
+          "github": "heytitle\r"
+        }
+      ]
+    }
+  ],
   "coders": [
     {
       "name": "ดลภาค สุวรรณปัญญา",
