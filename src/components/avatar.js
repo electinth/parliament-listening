@@ -1,6 +1,6 @@
 import React from 'react'
 
-const cdn = `http://d7q5y8ilrfexc.cloudfront.net/parliament-listening/politicians`
+const cdn = `https://elect.thematter.co/data/politicians`
 
 const imageUrl = (name) => {
     return `${cdn}/${name.replace(/ +/g, "-")}.jpg`
