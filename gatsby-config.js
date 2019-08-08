@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `แอบฟังเสียงรัฐสภา (เวอร์ชั่นทดสอบ)`,
-    // @todo #2 update site's description & author
+    title: `เขาคุยอะไรกัน? ดูบันทึกประชุมสภาย้อนหลัง (เวอร์ชั่นทดสอบ)`,
+    // @todo #2 update site's description, author, and og:image
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    author: `Voluteers and the ELECT team`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

@@ -15,15 +15,7 @@ import "./layout.css"
 import Header from "./header";
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+  const titleStr = `แอบฟังเสียงรัฐสภา (เวอร์ชั่นทดสอบ)`
 
   return (
     <>
@@ -36,7 +28,7 @@ const Layout = ({ children }) => {
           padding: `1rem 1.0875rem 1.45rem`,
         }}
       >
-        <h1>{data.site.siteMetadata.title}</h1>
+        <h1>{titleStr}</h1>
         <main>{children}</main>
         <footer>
           {
