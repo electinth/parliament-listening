@@ -1,0 +1,44 @@
+{
+  "coders": [
+    {
+      "name": "ดลภาค สุวรรณปัญญา",
+      "role": "coders",
+      "url": "https://github.com/phoneee",
+      "github": "phoneee\r"
+    },
+    {
+      "name": "ภัทรวัต ช่อไม้",
+      "role": "coders",
+      "url": "http://pat.chormai.org/#!",
+      "github": "heytitle\r"
+    },
+    {
+      "name": "อรรณวุฒิ ลีไพศาลสุวรรณา",
+      "role": "coders",
+      "url": "https://unnawut.com",
+      "github": "unnawut\r"
+    }
+  ],
+  "designers": [
+    {
+      "name": "ธัญญาเรศ ล้อมรัตนพนา",
+      "role": "designers",
+      "url": "",
+      "github": "\r"
+    },
+    {
+      "name": "น้ำใส ศุภวงศ์",
+      "role": "designers",
+      "url": "",
+      "github": "\r"
+    }
+  ],
+  "others": [
+    {
+      "name": "Boonmee Lab",
+      "role": "others",
+      "url": "https://www.facebook.com/BoonmeeLab/",
+      "github": "\r"
+    }
+  ]
+}

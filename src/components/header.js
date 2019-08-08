@@ -2,20 +2,23 @@ import React from 'react'
 import "./header.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookF, faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { Link } from "gatsby"
 
 // @todo #2 social buttons are quite large while initially loading.
 
 const Header = () => {
   return <header className="site-header">
           <nav className="navbar navbar-light" style={{padding: "10px"}}>
-            <a className="navbar-brand" href="#" style={{
-              textDecoration: "none",
-              float: "left"
-            }}>
-              <img style={{marginBottom: "5px"}}
-                src="https://elect.in.th/wp-content/uploads/2018/10/site-logo.png"/>
-              <div className="motto" style={{marginTop: "0px"}}>In VOTE We Trust</div>
-            </a>
+            <Link to="/" style={{float: "left"}}>
+              <img className="navbar-logo" src="https://elect.in.th/wp-content/uploads/2018/10/site-logo.png"/>
+              <div className="navbar-motto">In VOTE We Trust</div>
+            </Link>
+    
+            <div className="navbar-pages" style={{float: "left"}}>
+              <Link to="/">แอบฟังเสียงรัฐสภา</Link>
+              <Link to="/about">เกี่ยวกับเรา</Link>
+            </div>
+    
             <div className="ml-auto d-flex navbar-more" style={{
               float: "right",
               margin: "5px 0",
