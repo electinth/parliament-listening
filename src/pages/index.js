@@ -10,7 +10,6 @@ import StatBox from "../components/stat-box"
 
 import TopKList from "../components/top-k-list"
 import DayList from "../components/day-list"
-import ControlBox from "../components/control-box"
 import PortionBar from "../components/portion-bar"
 import PartyCard from "../components/party-card"
 import TimeLabel from "../components/time-label";
