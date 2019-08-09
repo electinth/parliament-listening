@@ -13,9 +13,9 @@ const Bar = ({percentage, height="17px", color}) => {
 }
 
 const PortionBar = ({
-    leftLabel, rightLabel,
+    leftLabel, rightLabel, remark,
     leftDuration=70, rightDuration=30,
-    leftColor="blue", rightColor="red"
+    leftColor="blue", rightColor="red",
   }) => {
 
   const total = leftDuration + rightDuration
@@ -41,6 +41,9 @@ const PortionBar = ({
           <TimeLabel duration={rightDuration}/>
         </span>
       </div>
+    </div>
+    <div style={{clear: "both", color: "gray"}}>
+      *{remark}
     </div>
   </div>
 }
