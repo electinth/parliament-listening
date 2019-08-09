@@ -4,6 +4,8 @@ import axios from "axios"
 
 import config from "../config"
 
+import { DESKTOP_MIN_WIDTH, media } from "../shared/style"
+
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import StatBox from "../components/stat-box"
@@ -29,7 +31,12 @@ const IndexPage = () => {
 
   return <Layout>
     <SEO title="Home" />
-    <h2>
+    <h2 css={{
+      fontSize: "1.2rem",
+      [media(DESKTOP_MIN_WIDTH)]: {
+        fontSize: "2rem"
+      }
+    }}>
       <select style={{border: "0px", color: "#E1161F", background: "white"}}>
         {
           config.datasets.map(d => {

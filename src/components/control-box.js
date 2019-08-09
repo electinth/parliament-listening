@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
+import { DESKTOP_MIN_WIDTH, media } from "../shared/style"
+
 const ControlBox = ({
       namePlaceholder,
       onNameSearch,
@@ -22,7 +24,14 @@ const ControlBox = ({
       width: "100%",
       margin: "20px 0px"
     }}>
-    <span style={{display: "table-cell", verticalAlign: "middle"}}>
+    <span css={{
+        display: "block",
+        [media(DESKTOP_MIN_WIDTH)]: {
+          display: "table-cell",
+          verticalAlign: "middle",
+        }
+      }}
+      >
         <input type="checkbox"
           style={{marginRight: "5px"}}
           checked={selectedChairman}
@@ -32,26 +41,47 @@ const ControlBox = ({
             onSelectedChairmanChange(newValue)
           }}/>ประธานสภา
     </span>
-    <span style={{float: "right", display: "table-cell"}}>
+    <span css={{
+        float: "none",
+        display: "block",
+        width: "100%",
+        textAlign: "center",
+        [media(DESKTOP_MIN_WIDTH)]: {
+          float: "right",
+          display: "table-cell",
+          width: "auto",
+          textAlign: "right"
+        }
+      }}>
       <i style={{
           fontWeight: "normal",
           marginRight: "10px",
         }}>
           (กด Enter เพื่อค้นหา)
       </i>
-      <span style={{
-          display: "inline-block",
+      <span css={{
+          position: "relative",
+          display: "block",
           padding: "5px 10px",
           border: "2px solid",
           borderRadius: "5px",
+          display: "block",
+          textAlign: "left",
+          [media(DESKTOP_MIN_WIDTH)]: {
+            display: "inline-block",
+            width: "auto",
+          }
         }}>
         <input type="text" 
         defaultValue={namePlaceholder}
         placeholder="ค้นหาจากชื่อ"
         onKeyDown={onKeyDown}
-        style={{border: "0px"}}
+        css={{
+          border: "0px",
+          width: "100%",
+        }}
         /> 
-        <span>
+        <span css={{position: "absolute", top: "5px", right: "10px"}}>
           <FontAwesomeIcon icon={faSearch}/>
         </span>
       </span>
