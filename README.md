@@ -12,6 +12,11 @@ $ npm install
 $ npm run develop
 ```
 
+### Build Environments
+| Name | URL |
+|---|---|
+| Staging | https://kind-bardeen-92630a.netlify.com |
+
 ## Datasets (WIP)
 | Date | Links |
 |---|---|
