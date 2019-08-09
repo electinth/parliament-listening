@@ -93,6 +93,11 @@ const DayList = ({data}) => {
           onNameSearch={(n) => setNameFilter(n)}
           onSelectedChairmanChange={(v) => setChairmanFilter(v)}
         />
+        <div style={{
+          margin: "10px 0",
+          textAlign: "center",
+          width: "100%",
+        }}>⏤ เริ่มต้นการประชุม ⏤</div>
         <ul style={{listStyle: "none", margin: "0px"}}>
             {
                 events.map( (e, i) => {
