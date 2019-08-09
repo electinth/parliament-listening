@@ -13,6 +13,7 @@ import DayList from "../components/day-list"
 import PortionBar from "../components/portion-bar"
 import PartyCard from "../components/party-card"
 import TimeLabel from "../components/time-label";
+import { withPrefix } from "gatsby";
 
 const IndexPage = () => {
   const [dataset, setDataset] = useState(config.datasets[0])
@@ -20,7 +21,7 @@ const IndexPage = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios(dataset.file)
+      const result = await axios(withPrefix(dataset.file))
       setData(result.data)
     };
     fetchData();
