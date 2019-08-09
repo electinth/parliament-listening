@@ -34,25 +34,27 @@ const EventCard = ({
             top: 0,
             left: 0
            }}></div>
-          <div style={{float: "left", marginLeft: "15px", marginRight: "10px"}}>
-            <Avatar src={name} width={isChairman ? 40 : undefined}/>
-          </div>
-          <div style={{float: "left", fontSize: "1.2rem"}}>
-              <b>{name}
-                <a href={videoUrl} target="_blank"
-                  style={{
-                      marginLeft: "5px",
-                      color: color,
-                      textDecoration: "none",
-                  }}
-                >
-                  <FontAwesomeIcon icon={faCaretSquareRight}/>
-                </a>
-              </b><br/>
-              {!isChairman && description}
-          </div>
           <div style={{float: "right", fontWeight: "bold"}}>
               {eventType} <TimeLabel duration={duration}/>
+          </div>
+          <div style={{float: "left", marginLeft: "15px"}}>
+            <div style={{float: "left", marginRight: "10px"}}>
+              <Avatar src={name} width={isChairman ? 40 : undefined}/>
+            </div>
+            <div style={{float: "left", fontSize: "1.2rem"}}>
+                <b>{name}
+                  <a href={videoUrl} target="_blank"
+                    style={{
+                        marginLeft: "5px",
+                        color: color,
+                        textDecoration: "none",
+                    }}
+                  >
+                    <FontAwesomeIcon icon={faCaretSquareRight}/>
+                  </a>
+                </b><br/>
+                {!isChairman && description}
+            </div>
           </div>
           <div style={{clear: "both"}}></div>
       </div>
