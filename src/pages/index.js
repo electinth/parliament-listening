@@ -37,7 +37,13 @@ const IndexPage = () => {
         fontSize: "2rem"
       }
     }}>
-      <select style={{border: "0px", color: "#E1161F", background: "white"}}>
+      <select css={{
+          border: "0px", color: "#E1161F", background: "white",
+          width: "100%",
+          [media(DESKTOP_MIN_WIDTH)]: {
+            width: "auto"
+          }
+        }}>
         {
           config.datasets.map(d => {
             return <option key={d.name} value={d.file}>{d.name}</option>
@@ -49,7 +55,9 @@ const IndexPage = () => {
       data.statistics &&
       <>
         <div>
-          <h2>สรุปเวลาการประชุม</h2>
+          <h2 style={{textAlign: "center"}}>
+            สรุปเวลาการประชุม {` `}
+          </h2>
           <h3 style={{textAlign: "center"}}>
             <TimeLabel duration={data.statistics.total_duration}/>
           </h3>

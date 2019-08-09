@@ -14,6 +14,8 @@ import "./layout.css"
 import Header from "./header";
 import consoleMSG from "../message"
 
+import { DESKTOP_MIN_WIDTH, media } from "../shared/style"
+
 const Layout = ({ children }) => {
   const titleStr = `แอบฟังเสียงรัฐสภา (เวอร์ชั่นทดสอบ)`
 
@@ -30,7 +32,14 @@ const Layout = ({ children }) => {
           padding: `1rem 1.0875rem 1.45rem`,
         }}
       >
-        <h1>{titleStr}</h1>
+        <h1 css={{
+          textAlign: "center",
+          [media(DESKTOP_MIN_WIDTH)]: {
+            textAlign: "left"
+          }
+        }}>
+          {titleStr}
+        </h1>
         <main>{children}</main>
         <footer style={{textAlign: "center", marginTop: "20px"}}>
           © {new Date().getFullYear()}, Built with 

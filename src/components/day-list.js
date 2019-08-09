@@ -9,6 +9,7 @@ import Avatar from "./avatar"
 import TimeLabel from './time-label';
 import ControlBox from './control-box';
 
+import { DESKTOP_MIN_WIDTH, media } from "../shared/style"
 
 const EventCard = ({
       name, description, isGovTeam, eventType,
@@ -86,7 +87,7 @@ const DayList = ({data}) => {
     }, [nameFilter, chairmanFilter])
 
     return <div style={{marginTop: "10px"}}>
-        <h2 style={{margin: 0}}>
+        <h2 style={{margin: 0, textAlign: "center"}}>
           ไทม์ไลน์การประชุมสภาฯ วันที่ {thai_date(data.name.trim())}
         </h2>
         <ControlBox
