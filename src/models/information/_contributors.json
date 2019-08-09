@@ -4,15 +4,27 @@
       "date": "25-07-2019",
       "persons": [
         {
-          "name": "ภัทรวัต ช่อไม้",
+          "name": "Pattarawat Chormai",
           "role": "annotators",
-          "url": "http://pat.chormai.org/#!",
+          "url": "http://pat.chormai.org/",
           "github": "heytitle\r"
         },
         {
-          "name": "อรรณวุฒิ ลีไพศาลสุวรรณา",
-          "role": "coders",
-          "url": "https://unnawut.com",
+          "name": "Punyisa Suptasan",
+          "role": "annotators",
+          "url": "",
+          "github": "\r"
+        },
+        {
+          "name": "Thanisara Ruangdej",
+          "role": "annotators",
+          "url": "https://www.facebook.com/punchupworld/",
+          "github": "\r"
+        },
+        {
+          "name": "Unnawut Leepaisalsuwanna",
+          "role": "annotators",
+          "url": "https://unnawut.com/",
           "github": "unnawut\r"
         }
       ]
@@ -21,49 +33,61 @@
       "date": "26-07-2019",
       "persons": [
         {
-          "name": "ภัทรวัต ช่อไม้",
+          "name": "คุณ?",
           "role": "annotators",
-          "url": "http://pat.chormai.org/#!",
-          "github": "heytitle\r"
+          "url": "https://github.com/codeforthailand/parliament-listening",
+          "github": "\r"
         }
       ]
     }
   ],
   "coders": [
     {
-      "name": "ดลภาค สุวรรณปัญญา",
+      "name": "Pattarawat Chormai",
       "role": "coders",
-      "url": "https://github.com/phoneee",
-      "github": "phoneee\r"
-    },
-    {
-      "name": "ภัทรวัต ช่อไม้",
-      "role": "coders",
-      "url": "http://pat.chormai.org/#!",
+      "url": "http://pat.chormai.org/",
       "github": "heytitle\r"
     },
     {
-      "name": "อรรณวุฒิ ลีไพศาลสุวรรณา",
+      "name": "Dollapak Suwanpunya",
       "role": "coders",
-      "url": "https://unnawut.com",
+      "url": "https://github.com/phoneee/",
+      "github": "phoneee\r"
+    },
+    {
+      "name": "Unnawut Leepaisalsuwanna",
+      "role": "coders",
+      "url": "https://unnawut.com/",
       "github": "unnawut\r"
+    },
+    {
+      "name": "Puripant Ruchikachorn",
+      "role": "coders",
+      "url": "http://puripant.ruchikachorn.com/",
+      "github": "puripant\r"
     }
   ],
   "designers": [
     {
-      "name": "ธัญญาเรศ ล้อมรัตนพนา",
+      "name": "Namsai Supavong",
       "role": "designers",
       "url": "",
       "github": "\r"
     },
     {
-      "name": "น้ำใส ศุภวงศ์",
+      "name": "Sy Chonato",
       "role": "designers",
-      "url": "",
+      "url": "https://www.behance.net/sychonato",
       "github": "\r"
     }
   ],
   "others": [
+    {
+      "name": "Punch Up",
+      "role": "others",
+      "url": "https://www.facebook.com/punchupworld/",
+      "github": "\r"
+    },
     {
       "name": "Boonmee Lab",
       "role": "others",
