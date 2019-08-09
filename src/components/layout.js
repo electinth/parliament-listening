@@ -7,15 +7,17 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
 
 import GlobalStyle from '../shared/css/globalStyles'
 
 import "./layout.css"
 import Header from "./header";
+import consoleMSG from "../message"
 
 const Layout = ({ children }) => {
   const titleStr = `แอบฟังเสียงรัฐสภา (เวอร์ชั่นทดสอบ)`
+
+  console.log(consoleMSG)
 
   return (
     <>
@@ -30,13 +32,10 @@ const Layout = ({ children }) => {
       >
         <h1>{titleStr}</h1>
         <main>{children}</main>
-        <footer>
-          {
-            // @todo #2 update footer
-          }
-          © {new Date().getFullYear()}, Built with
+        <footer style={{textAlign: "center", marginTop: "20px"}}>
+          © {new Date().getFullYear()}, Built with 
           {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          ☕️💪⌚️
         </footer>
       </div>
     </>

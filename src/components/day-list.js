@@ -119,6 +119,11 @@ const DayList = ({data}) => {
                 })
             }
         </ul>
+        <div style={{
+          margin: "10px 0",
+          textAlign: "center",
+          width: "100%",
+        }}>⏤ ปิดประชุม ⏤</div>
     </div>
 }
 
