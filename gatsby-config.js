@@ -7,6 +7,7 @@ module.exports = {
     author: `Voluteers and the ELECT team`,
   },
   plugins: [
+    `gatsby-plugin-emotion`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
