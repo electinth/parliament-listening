@@ -4,6 +4,7 @@ module.exports = {
     title: `เขาคุยอะไรกัน? ดูบันทึกประชุมสภาย้อนหลัง (เวอร์ชั่นทดสอบ)`,
     description: `ใครพูดตอนไหน ใครประท้วงบ่อย เลือกช่วงที่อยากดูได้ที่นี่`,
     author: `Voluteers and the ELECT team`,
+    image: `/images/cover.png`
   },
   plugins: [
     `gatsby-plugin-emotion`,
