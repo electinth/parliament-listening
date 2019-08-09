@@ -15,7 +15,7 @@ $ npm run develop
 ## Datasets (WIP)
 | Date | Links |
 |---|---|
-| 25-07-2019 | [![Raw Data][sheet-badge]]() [![Data Preparation][data-prep-badge]]() |
+| 25-07-2019 | [![Raw Data][sheet-badge]](https://docs.google.com/spreadsheets/d/1058PcZHySzumcATrGdv0fBVEyrfbhrOGnLhaMC7wYt0/edit#gid=432547432) [![Data Preparation][data-prep-badge]](https://colab.research.google.com/drive/12cejltipBUCh4c61OC9KH7B1MyftMEOM) |
 
 
 ## Acknowledgements
