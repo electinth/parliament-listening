@@ -2,8 +2,7 @@ module.exports = {
   pathPrefix: `/parliament-listening`,
   siteMetadata: {
     title: `เขาคุยอะไรกัน? ดูบันทึกประชุมสภาย้อนหลัง (เวอร์ชั่นทดสอบ)`,
-    // @todo #2 update site's description, author, and og:image
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    description: `ใครพูดตอนไหน ใครประท้วงบ่อย เลือกช่วงที่อยากดูได้ที่นี่`,
     author: `Voluteers and the ELECT team`,
   },
   plugins: [
