@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: `/parliament-listening`,
   siteMetadata: {
     title: `เขาคุยอะไรกัน? ดูบันทึกประชุมสภาย้อนหลัง (เวอร์ชั่นทดสอบ)`,
     // @todo #2 update site's description, author, and og:image
