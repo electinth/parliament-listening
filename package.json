@@ -2,7 +2,7 @@
   "name": "parliament-listening",
   "private": true,
   "description": "Listen to what are discussed in Thailand's parliament meetings",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Voluteers and the ELECT team",
   "dependencies": {
     "@emotion/core": "^10.0.15",
