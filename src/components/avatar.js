@@ -1,5 +1,8 @@
 import React from 'react'
 
+import placeholderImage from "../images/democracy-monument.png";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+
 const cdn = `https://elect.thematter.co/data/politicians`
 
 const imageUrl = (name) => {
@@ -14,9 +17,10 @@ const Avatar = ({src, width=60}) => {
       borderRadius: width,
       overflow: `hidden`
     }}>
-      <img src={imageUrl(src)} style={{
-        width: "100%", verticalAlign: "middle"
-      }}/>
+      <LazyLoadImage
+        src={imageUrl(src)}
+        placeholderSrc={placeholderImage}
+        width="100%"/>
     </span>
 }
 
