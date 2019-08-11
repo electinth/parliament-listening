@@ -42,9 +42,11 @@ const Layout = ({ children }) => {
         </h1>
         <main>{children}</main>
         <footer style={{textAlign: "center", marginTop: "20px"}}>
-          © {new Date().getFullYear()}, Built with 
+          © {new Date().getFullYear()}. Built with
           {` `}
-          ☕️💪⌚️
+          ☕️💪⌚️.
+          <p>Code is licensed under <a href="https://github.com/codeforthailand/parliament-listening/blob/master/LICENSE"> MIT License</a>.
+          Data is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 License.</a></p>
         </footer>
       </div>
     </>

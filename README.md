@@ -41,3 +41,9 @@ Apart from being a tool that provides an efficient way to listen to parliament m
 [fantasy-premiere]: https://fantasy.premierleague.com
 [ica]: https://en.wikipedia.org/wiki/Independent_component_analysis
 [bss]: https://en.wikipedia.org/wiki/Signal_separation
+
+## License
+
+The code is licensed under the [MIT License](./LICENSE) ![MIT License](https://img.shields.io/github/license/codeforthailand/parliament-listening?style=flat-square)
+
+Data is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0) ![CC-BY-SA 4.0 International License](https://i.creativecommons.org/l/by-sa/4.0/80x15.png)
