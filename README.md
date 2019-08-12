@@ -30,7 +30,7 @@ $ npm run develop
 Apart from being a tool that provides an efficient way to listen to parliament meetings, its datasets are also valuable. These datasets could results in several applications including:
 1. **Performance metric** of each member of parliament (MP). Althought it's a rough estimation, having this metric would allow people to see how their representatives perform.
 2. Inspired by the famous online game [Fantasy Football][fantasy-premiere], we could build **Fantasy Politics** in which people will play by picking a squad of politicians before next meeting. How members in the squad participate in the meeting will result scores that the player will receive after the meeting.
-3. Inspired by music streaming services, i.e. Spotify or Fungjai,  we could have a similar platform, **Fungkai Dee**,  but contains tracks of politicans talking in parliament meetings.
+3. Inspired by music streaming services, i.e. Spotify or Fungjai,  we could have a similar platform, **Fungkai Dee**, offering  tracks of politicians talking in parliament meetings.
 
 
 ## Acknowledgements
