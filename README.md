@@ -18,9 +18,10 @@ $ npm run develop
 | Staging | https://kind-bardeen-92630a.netlify.com |
 
 ## Datasets (WIP)
-| Date | Links |
+| Date | Status | Links |
 |---|---|
-| 25-07-2019 | [![Raw Data][sheet-badge]](https://docs.google.com/spreadsheets/d/1058PcZHySzumcATrGdv0fBVEyrfbhrOGnLhaMC7wYt0/edit#gid=432547432) [![Data Preparation][data-prep-badge]](https://colab.research.google.com/drive/12cejltipBUCh4c61OC9KH7B1MyftMEOM) |
+| 25-07-2019 | Completed |  [![Raw Data][sheet-badge]](https://docs.google.com/spreadsheets/d/1058PcZHySzumcATrGdv0fBVEyrfbhrOGnLhaMC7wYt0/edit#gid=432547432) [![Data Preparation][data-prep-badge]](https://colab.research.google.com/drive/12cejltipBUCh4c61OC9KH7B1MyftMEOM) |
+| 26-07-2019 | In progress | [![Raw Data][sheet-badge]](https://docs.google.com/spreadsheets/d/1058PcZHySzumcATrGdv0fBVEyrfbhrOGnLhaMC7wYt0/edit#gid=432547432) |
 
 ## Future developments
 - Use machine learning algorithms to automatically identify speakers in each part of meetings. From what I see, this scenario is probably a [Blind Source Separation][bss] problem. Hence, we might start with [Independent Component Analysis (ICA)][ica].
