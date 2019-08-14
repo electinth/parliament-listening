@@ -10,7 +10,9 @@ const Header = () => {
   return <header className="site-header">
           <nav className="navbar navbar-light" style={{padding: "10px"}}>
             <Link to="/" style={{float: "left"}}>
-              <img className="navbar-logo" src="https://elect.in.th/wp-content/uploads/2018/10/site-logo.png"/>
+              <img className="navbar-logo" src="https://elect.in.th/wp-content/uploads/2018/10/site-logo.png"
+                alt="ELECT"
+              />
               <div className="navbar-motto">In VOTE We Trust</div>
             </Link>
     

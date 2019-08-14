@@ -61,7 +61,6 @@ const ControlBox = ({
       </i>
       <span css={{
           position: "relative",
-          display: "block",
           padding: "5px 10px",
           border: "2px solid",
           borderRadius: "5px",

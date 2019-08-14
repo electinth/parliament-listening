@@ -20,6 +20,7 @@ const PartyCard = ({
           marginRight: "10px",
           marginBottom: "0px",
         }}
+        alt={partyName}
         src={partyLogoURL(partyName)}
       />
     </span>

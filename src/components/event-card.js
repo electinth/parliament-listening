@@ -40,6 +40,7 @@ const EventCard = ({
             <div style={{float: "left", fontSize: "1.2rem"}}>
                 <b>{name}
                   <a href={videoUrl} target="_blank"
+                    rel="noopener noreferrer"
                     style={{
                         marginLeft: "5px",
                         color: color,
