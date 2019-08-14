@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
+import { useQueryParam, StringParam, BooleanParam } from 'use-query-params';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretSquareRight } from '@fortawesome/free-regular-svg-icons'
 
@@ -8,8 +10,6 @@ import appendQuery from 'append-query'
 import Avatar from "./avatar"
 import TimeLabel from './time-label';
 import ControlBox from './control-box';
-
-import { DESKTOP_MIN_WIDTH, media } from "../shared/style"
 
 const EventCard = ({
       name, description, isGovTeam, eventType,
@@ -68,13 +68,30 @@ const thai_date = (str) => {
   return `${+dmy[0]} ${short_months[+dmy[1]]} ${+dmy[2] + 543}`;
 }
 
+const stateFromQueryParam = (name, type) => {
+    const [valueFromUrl, setQueryToUrl] = useQueryParam(name, type)
+    const [stateValue, setStateValue] = useState(valueFromUrl)
+
+    useEffect(() => {
+      setQueryToUrl(stateValue)
+    }, [stateValue])
+
+    return [stateValue, setStateValue]
+}
+
 const DayList = ({data}) => {
-    const [nameFilter, setNameFilter] = useState("")
-    const [chairmanFilter, setChairmanFilter] = useState(false)
+
+    const [query, setQuery] = stateFromQueryParam('q', StringParam)
+
+    const [chairmanFilter, setChairmanFilter] = stateFromQueryParam(
+      'chariman',
+      BooleanParam
+    )
+
     const [events, setEvents] = useState([])
 
     useEffect(() => {
-      const rx = new RegExp(nameFilter)
+      const rx = new RegExp(query)
       const filteredEvents = data.events.filter(e => {
         if(chairmanFilter){
           return e.name.match(rx)
@@ -84,16 +101,18 @@ const DayList = ({data}) => {
       })
 
       setEvents(filteredEvents)
-    }, [nameFilter, chairmanFilter])
+    }, [query, chairmanFilter])
 
     return <div style={{marginTop: "10px"}}>
         <h2 style={{margin: 0, textAlign: "center"}}>
           ไทม์ไลน์การประชุมสภาฯ วันที่ {thai_date(data.name.trim())}
         </h2>
         <ControlBox
-          namePlaceholder={nameFilter}
+          namePlaceholder={query}
           defaultChairmanFilter={chairmanFilter}
-          onNameSearch={(n) => setNameFilter(n)}
+          onNameSearch={(n) => {
+            setQuery(n)
+          }}
           onSelectedChairmanChange={(v) => setChairmanFilter(v)}
         />
         <div style={{
