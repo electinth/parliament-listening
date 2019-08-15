@@ -10,6 +10,8 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import StatBox from "../components/stat-box"
 
+import { stateFromQueryParam, StringParam } from '../components/utils'
+
 import TopKList from "../components/top-k-list"
 import DayList from "../components/day-list"
 import PortionBar from "../components/portion-bar"
@@ -18,12 +20,17 @@ import TimeLabel from "../components/time-label";
 import { withPrefix } from "gatsby";
 
 const IndexPage = () => {
-  const [dataset, setDataset] = useState(config.datasets[0])
+
+  const [date] = stateFromQueryParam('date', StringParam)
+  const [dataset] = useState(
+    config.dateToDataset(date) || config.datasets[0]
+  )
+
   const [data, setData] = useState({})
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios(withPrefix(dataset.file))
+      const result = await axios(withPrefix(`/data/${dataset.date}.json`))
       setData(result.data)
     };
     fetchData();
