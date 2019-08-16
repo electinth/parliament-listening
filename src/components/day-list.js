@@ -69,6 +69,8 @@ const DayList = ({data}) => {
                             duration={e.duration}
                             isChairman={e.is_chairman}
                             videoUrl={appendQuery(data.videos[e.video_ix], {t: e.start_second})}
+                            transcript={e.transcript}
+                            is_manual_transcript={e.is_manual_transcript}
                         />
                     </li>
                 })

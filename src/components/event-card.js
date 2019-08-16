@@ -1,17 +1,25 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCaretSquareRight } from '@fortawesome/free-regular-svg-icons'
+import { faCaretSquareRight, faClosedCaptioning as faRegularCaptioning }
+  from '@fortawesome/free-regular-svg-icons'
+
+import { faClosedCaptioning as faSolidCaptioning }
+  from '@fortawesome/free-solid-svg-icons'
 
 import Avatar from "./avatar"
 import TimeLabel from './time-label';
 
 const EventCard = ({
       name, description, isGovTeam, eventType,
-      duration, videoUrl, isChairman
+      duration, videoUrl, isChairman, transcript, is_manual_transcript
     }) => {
+
+    const [captionToggle, setCaptionToggle] = useState(false)
+
     const color = isChairman ? "white": "black"
     const background = isChairman ? "black": "white"
+
     return <div style={{
       width: "100%",
       border: "2px solid black",
@@ -38,7 +46,13 @@ const EventCard = ({
               <Avatar src={name} width={isChairman ? 40 : undefined}/>
             </div>
             <div style={{float: "left", fontSize: "1.2rem"}}>
-                <b>{name}
+                <b>{name}</b>
+                <span style={{marginLeft: "10px"}}>
+                  <span style={{ cursor: "pointer" }}>
+                    <FontAwesomeIcon icon={
+                      captionToggle ? faSolidCaptioning : faRegularCaptioning
+                    } onClick={() => setCaptionToggle(!captionToggle) }/>
+                  </span>
                   <a href={videoUrl} target="_blank"
                     rel="noopener noreferrer"
                     style={{
@@ -49,11 +63,25 @@ const EventCard = ({
                   >
                     <FontAwesomeIcon icon={faCaretSquareRight}/>
                   </a>
-                </b><br/>
+                </span>
+                <br/>
                 {!isChairman && description}
             </div>
           </div>
           <div style={{clear: "both"}}></div>
+          { captionToggle && <div style={{marginLeft: "15px"}}>
+            <div style={{
+              fontSize: "0.8em",
+              textAlign: "center",
+              width: "100%",
+            }}>
+              (ถอดโดยโปรแกรมอัตโนมัติ)
+            </div>
+            <div style={{margin: "10px auto", whiteSpace: "pre-line"}}>
+              {transcript}
+            </div>
+          </div>
+          }
       </div>
     </div>
 }
