@@ -12,6 +12,12 @@ $ npm install
 $ npm run develop
 ```
 
+### How to Release
+1. Bump version `npm version [major|minor|...]`
+2. Git push `git push && git push --tags`
+3. Deploy `npm run build-and-deploy` to ELECT's gitlab.
+4. Ping P'Tai in Slack
+
 ### Build Environments
 | Name | URL |
 |---|---|
