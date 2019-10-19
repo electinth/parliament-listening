@@ -8,10 +8,12 @@ import appendQuery from 'append-query'
 import EventCard from "./event-card"
 import ControlBox from './control-box';
 
-const short_months = ["", "ม.ค.", "ก.พ.", "มี.ค.", "เม.ย.", "พ.ค.", "มิ.ย.", "ก.ค.", "ส.ค.", "ก.ย.", "ต.ค.", "พ.ย.", "ธ.ค."];
+import moment from "moment";
+import 'moment/locale/th';
+
 const thai_date = (str) => {
-  const dmy = str.split("-"); // NOTE the date string must be "dd-mm-yyyy"
-  return `${+dmy[0]} ${short_months[+dmy[1]]} ${+dmy[2] + 543}`;
+  const dmy = moment(str, "DD-MM-YYYY").locale('th').add(543, 'years').format("DD MMM YYYY");
+  return dmy;
 }
 
 const DayList = ({data}) => {
