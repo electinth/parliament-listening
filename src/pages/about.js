@@ -51,6 +51,12 @@ const AboutPage = () => (
       และในเวอร์ชั่นต่อๆ ไป คาดว่าจะเพิ่มเติมข้อมูลจากการประชุมครั้งอื่นๆ พร้อมเพิ่มตัวเลือกต่างๆ
       รวมถึงไฮไลท์ของการประชุมแต่ละครั้ง เพื่อให้ดูย้อนหลังได้ว่า <b>"ใครเคยพูดอะไรไว้บ้าง"</b>
     </p>
+    <p>
+      รายละเอียดเพิ่มเติมเกี่ยวกับข้อมูลและการพัฒนา สามารถดูได้ที่ {` `}
+      <b>
+        <a href="https://github.com/codeforthailand/parliament-listening">github.com/codeforthailand/parliament-listening</a>
+      </b>
+    </p>
     <h2>อาสาสมัครที่ร่วมพัฒนา</h2>
     <div id="contributors">
       <ContributorSection
