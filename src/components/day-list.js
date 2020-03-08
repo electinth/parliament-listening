@@ -70,7 +70,7 @@ const DayList = ({data}) => {
                             eventType={e.type}
                             duration={e.duration}
                             isChairman={e.is_chairman}
-                            videoUrl={appendQuery(data.videos[e.video_ix], {t: e.start_second})}
+                            videoUrl={appendQuery(data.videos[e.video_ix] || "", {t: e.start_second})}
                         />
                     </li>
                 })
