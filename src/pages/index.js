@@ -53,7 +53,10 @@ const IndexPage = () => {
               width: "auto"
             }
           }}
-          onChange={(e) => setDate(e.target.value)}
+          onChange={(e) => {
+            setData({})
+            setDate(e.target.value)
+          }}
         >
         {
           config.datasets.map(d => {
@@ -62,6 +65,10 @@ const IndexPage = () => {
         }
       </select>
     </h2>
+    {
+      !data.statistics &&
+      <div align="center">กำลังโหลดข้อมูล</div>
+    }
     {
       data.statistics &&
       <>
