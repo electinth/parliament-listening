@@ -21,23 +21,21 @@ import { withPrefix } from "gatsby";
 
 const IndexPage = () => {
 
-  const [date] = stateFromQueryParam('date', StringParam)
-  const [dataset, setDataset] = useState(
-    config.dateToDataset(date) || config.datasets[0]
-  )
+  const [date, setDate] = stateFromQueryParam('date', StringParam)
 
   const [data, setData] = useState({})
 
+  if(!date || !(date in config.dateToDataset)) {
+    setDate(config.datasets[0].date)
+  }
+
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios(withPrefix(`/data/${dataset.date}.json`))
+      const result = await axios(withPrefix(`/data/${date}.json`))
       setData(result.data)
     };
     fetchData();
-  }, [dataset])
-
-
-  console.log(data.statistics)
+  }, [date])
 
   return <Layout>
     <SEO title="Home" />
@@ -55,7 +53,7 @@ const IndexPage = () => {
               width: "auto"
             }
           }}
-          onChange={(e) => setDataset(config.dateToDataset(e.target.value))}
+          onChange={(e) => setDate(e.target.value)}
         >
         {
           config.datasets.map(d => {

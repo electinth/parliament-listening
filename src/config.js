@@ -29,7 +29,7 @@ datasets.forEach(d => {
 
 const config = {
   datasets: datasets,
-  dateToDataset: (d) => dateToDataset[d]
+  dateToDataset: dateToDataset,
 }
 
 export default config
