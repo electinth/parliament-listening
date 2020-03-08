@@ -38,7 +38,7 @@ const EventCard = ({
               <Avatar src={name} width={isChairman ? 40 : undefined}/>
             </div>
             <div style={{float: "left", fontSize: "1.2rem"}}>
-                <b>{name}
+                <b>{name.trim()}
                   <a href={videoUrl} target="_blank"
                     rel="noopener noreferrer"
                     style={{

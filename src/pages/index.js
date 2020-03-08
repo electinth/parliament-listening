@@ -22,7 +22,7 @@ import { withPrefix } from "gatsby";
 const IndexPage = () => {
 
   const [date] = stateFromQueryParam('date', StringParam)
-  const [dataset] = useState(
+  const [dataset, setDataset] = useState(
     config.dateToDataset(date) || config.datasets[0]
   )
 
@@ -36,6 +36,9 @@ const IndexPage = () => {
     fetchData();
   }, [dataset])
 
+
+  console.log(data.statistics)
+
   return <Layout>
     <SEO title="Home" />
     <h2 css={{
@@ -44,16 +47,19 @@ const IndexPage = () => {
         fontSize: "2rem"
       }
     }}>
-      <select css={{
-          border: "0px", color: "#E1161F", background: "white",
-          width: "100%",
-          [media(DESKTOP_MIN_WIDTH)]: {
-            width: "auto"
-          }
-        }}>
+      <select
+          css={{
+            border: "0px", color: "#E1161F", background: "white",
+            width: "100%",
+            [media(DESKTOP_MIN_WIDTH)]: {
+              width: "auto"
+            }
+          }}
+          onChange={(e) => setDataset(config.dateToDataset(e.target.value))}
+        >
         {
           config.datasets.map(d => {
-            return <option key={d.name} value={d.file}>{d.name}</option>
+            return <option key={d.name} value={d.date}>{d.name}</option>
           })
         }
       </select>
