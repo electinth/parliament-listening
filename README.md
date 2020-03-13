@@ -27,7 +27,7 @@ $ npm run develop
 | Date | Status | Links |
 |---|---|---|
 | 2019/07/25 | Completed |  [![Raw Data][sheet-badge]](https://docs.google.com/spreadsheets/d/1058PcZHySzumcATrGdv0fBVEyrfbhrOGnLhaMC7wYt0/edit#gid=432547432) [![Data Preparation][data-prep-badge]](https://colab.research.google.com/drive/12cejltipBUCh4c61OC9KH7B1MyftMEOM) |
-| 2020/02/24-27 | Completed |  [![Raw Data][sheet-badge]](https://docs.google.com/spreadsheets/d/183BhZ7ncGsLCUlfq0E1mx1JICw-9NwPCGbfj5HN-zuU/edit#gid=12499297180) [![Data Preparation][data-prep-badge]](https://colab.research.google.com/drive/1X2S4KI0M3n5ev6xsnDm9pCQ7dANKFuC4) |
+| 2020/02/24-27 | Completed |  [![Raw Data][sheet-badge]](https://docs.google.com/spreadsheets/d/1HzJuEf7yr7LCUw4LHmLy7Sy0dPMSS-jNJlf-apL53Gk/edit#gid=1754991351) [![Data Preparation][data-prep-badge]](https://colab.research.google.com/drive/1X2S4KI0M3n5ev6xsnDm9pCQ7dANKFuC4) |
 
 ## Future developments
 - Use machine learning algorithms to automatically identify speakers in each part of meetings. From what I see, this scenario is probably a [Blind Source Separation][bss] problem. Hence, we might start with [Independent Component Analysis (ICA)][ica].
