@@ -1,0 +1,42 @@
+[
+  {
+    "name": "27 ก.พ. 2563 อภิปรายไม่ไว้วางใจวันที่ 4",
+    "date": "27-02-2020",
+    "remark":{
+        "gov_opposition_stats": "",
+        "debating_opposing_stats": ""
+    }
+  },
+  {
+    "name": "26 ก.พ. 2563 อภิปรายไม่ไว้วางใจวันที่ 3",
+    "date": "26-02-2020",
+    "remark":{
+        "gov_opposition_stats": "",
+        "debating_opposing_stats": ""
+    }
+  },
+  {
+    "name": "25 ก.พ. 2563 อภิปรายไม่ไว้วางใจวันที่ 2",
+    "date": "25-02-2020",
+    "remark":{
+        "gov_opposition_stats": "",
+        "debating_opposing_stats": ""
+    }
+  },
+  {
+    "name": "24 ก.พ. 2563 อภิปรายไม่ไว้วางใจวันที่ 1",
+    "date": "24-02-2020",
+    "remark":{
+        "gov_opposition_stats": "",
+        "debating_opposing_stats": ""
+    }
+  },
+  {
+    "name": "25 ก.ค. 2562 แถลงนโยบาย​ฯ",
+    "date": "25-07-2019",
+    "remark": {
+        "gov_opposition_stats": "สัดส่วนคำนวณจากเวลารวมของ ส.ส. ทั้งหมด",
+        "debating_opposing_stats": "สัดส่วนคำนวณจากเวลารวมของ ส.ส. และ ส.ว."
+    }
+  }
+]

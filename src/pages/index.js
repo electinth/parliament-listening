@@ -86,7 +86,7 @@ const IndexPage = () => {
                 leftDuration={data.statistics.total_gov_team_duration}
                 rightDuration={data.statistics.total_opposition_team_duration}
                 leftColor="#0E64B9" rightColor="#E1161F"
-                remark="สัดส่วนคำนวณจากเวลารวมของ ส.ส. ทั้งหมด"
+                remark={config.dateToDataset[date].remark.gov_opposition_stats}
               />
             </StatBox>
             <StatBox>
@@ -95,7 +95,7 @@ const IndexPage = () => {
                 leftDuration={data.statistics.total_debate_duration}
                 rightDuration={data.statistics.total_opposing_duration}
                 leftColor="#FFFFFF" rightColor="#000000"
-                remark="สัดส่วนคำนวณจากเวลารวมของ ส.ส. และ ส.ว."
+                remark={config.dateToDataset[date].remark.debating_opposing_stats}
               />
             </StatBox>
             <div style={{height: "1.5rem", width: "100%", clear: "both"}}></div>
