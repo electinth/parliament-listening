@@ -17,7 +17,7 @@ import consoleMSG from "../message"
 import { DESKTOP_MIN_WIDTH, media } from "../shared/style"
 
 const Layout = ({ children }) => {
-  const titleStr = `แอบฟังเสียงรัฐสภา (เวอร์ชั่นทดสอบ)`
+  const titleStr = `แอบฟังเสียงรัฐสภา`
 
   console.log(consoleMSG)
 
