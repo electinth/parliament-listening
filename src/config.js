@@ -11,14 +11,9 @@ datasets.forEach(d => {
   dateToDataset[d.date] = d
 })
 
-const theyWorkForUs = {
-  peoplePath: "https://theyworkforus.elect.in.th/people/"
-}
-
 const config = {
   datasets: datasets,
-  dateToDataset: (d) => dateToDataset[d],
-  theyWorkForUs: theyWorkForUs
+  dateToDataset: (d) => dateToDataset[d]
 }
 
 export default config

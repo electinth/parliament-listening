@@ -3,7 +3,7 @@ import React from 'react'
 import Avatar from "./avatar"
 import TimeLabel from "./time-label"
 
-import config from "../config"
+import theyWorkForUs from "../they-work-for-us"
 
 const TopKList = ({title, list}) => {
     return <div>
@@ -13,12 +13,12 @@ const TopKList = ({title, list}) => {
                 list.map(p => {
                     return <li key={p.name}>
                         <div style={{float: "left", marginRight: "5px"}}>
-                            <a href={config.theyWorkForUs.peoplePath + p.name.trim().replace(" ", "-")} target="_blank" rel="noopener noreferrer">
+                            <a href={theyWorkForUs.peopleUrl(p.name)} target="_blank" rel="noopener noreferrer">
                                 <Avatar src={p.name}/>
                             </a>
                         </div>
                         <div>
-                            <a href={config.theyWorkForUs.peoplePath + p.name.trim().replace(" ", "-")} target="_blank" rel="noopener noreferrer">
+                            <a href={theyWorkForUs.peopleUrl(p.name)} target="_blank" rel="noopener noreferrer">
                                 <b>{p.name}</b>
                             </a><br/>
                             {`${p.party} `}
