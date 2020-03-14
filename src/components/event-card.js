@@ -8,7 +8,7 @@ import TimeLabel from './time-label';
 
 const EventCard = ({
       name, description, isGovTeam, eventType,
-      duration, videoUrl, isChairman
+      duration, videoUrl, theyWorkForUsUrl, isChairman
     }) => {
     const color = isChairman ? "white": "black"
     const background = isChairman ? "black": "white"
@@ -35,10 +35,13 @@ const EventCard = ({
           </div>
           <div style={{float: "left", marginLeft: "15px"}}>
             <div style={{float: "left", marginRight: "10px"}}>
-              <Avatar src={name} width={isChairman ? 40 : undefined}/>
+              <a href={theyWorkForUsUrl} target="_blank">
+                <Avatar src={name} width={isChairman ? 40 : undefined}/>
+              </a>
             </div>
             <div style={{float: "left", fontSize: "1.2rem"}}>
-                <b>{name}
+                <b>
+                  <a href={theyWorkForUsUrl} target="_blank">{name}</a>
                   <a href={videoUrl} target="_blank"
                     rel="noopener noreferrer"
                     style={{

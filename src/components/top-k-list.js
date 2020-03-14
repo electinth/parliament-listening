@@ -3,6 +3,8 @@ import React from 'react'
 import Avatar from "./avatar"
 import TimeLabel from "./time-label"
 
+import config from "../config"
+
 const TopKList = ({title, list}) => {
     return <div>
         <b>{title}</b>
@@ -11,10 +13,14 @@ const TopKList = ({title, list}) => {
                 list.map(p => {
                     return <li key={p.name}>
                         <div style={{float: "left", marginRight: "5px"}}>
-                            <Avatar src={p.name}/>
+                            <a href={config.theyWorkForUs.peoplePath + p.name.trim().replace(" ", "-")} target="_blank">
+                                <Avatar src={p.name}/>
+                            </a>
                         </div>
                         <div>
-                            <b>{p.name}</b> <br/>
+                            <a href={config.theyWorkForUs.peoplePath + p.name.trim().replace(" ", "-")} target="_blank">
+                                <b>{p.name}</b>
+                            </a><br/>
                             {`${p.party} `}
                             <TimeLabel duration={p.duration}/>
                         </div>

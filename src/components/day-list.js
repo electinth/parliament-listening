@@ -11,6 +11,8 @@ import ControlBox from './control-box';
 import moment from "moment";
 import 'moment/locale/th';
 
+import config from "../config"
+
 const thai_date = (str) => {
   const dmy = moment(str, "DD-MM-YYYY").locale('th').add(543, 'years').format("DD MMM YYYY");
   return dmy;
@@ -71,6 +73,7 @@ const DayList = ({data}) => {
                             duration={e.duration}
                             isChairman={e.is_chairman}
                             videoUrl={appendQuery(data.videos[e.video_ix], {t: e.start_second})}
+                            theyWorkForUsUrl={config.theyWorkForUs.peoplePath + e.name.trim().replace(" ", "-")}
                         />
                     </li>
                 })
