@@ -13,12 +13,12 @@ const TopKList = ({title, list}) => {
                 list.map(p => {
                     return <li key={p.name}>
                         <div style={{float: "left", marginRight: "5px"}}>
-                            <a href={config.theyWorkForUs.peoplePath + p.name.trim().replace(" ", "-")} target="_blank">
+                            <a href={config.theyWorkForUs.peoplePath + p.name.trim().replace(" ", "-")} target="_blank" rel="noopener noreferrer">
                                 <Avatar src={p.name}/>
                             </a>
                         </div>
                         <div>
-                            <a href={config.theyWorkForUs.peoplePath + p.name.trim().replace(" ", "-")} target="_blank">
+                            <a href={config.theyWorkForUs.peoplePath + p.name.trim().replace(" ", "-")} target="_blank" rel="noopener noreferrer">
                                 <b>{p.name}</b>
                             </a><br/>
                             {`${p.party} `}

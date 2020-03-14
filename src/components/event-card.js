@@ -35,13 +35,18 @@ const EventCard = ({
           </div>
           <div style={{float: "left", marginLeft: "15px"}}>
             <div style={{float: "left", marginRight: "10px"}}>
-              <a href={theyWorkForUsUrl} target="_blank">
+              <a href={theyWorkForUsUrl} target="_blank" rel="noopener noreferrer">
                 <Avatar src={name} width={isChairman ? 40 : undefined}/>
               </a>
             </div>
             <div style={{float: "left", fontSize: "1.2rem"}}>
                 <b>
-                  <a href={theyWorkForUsUrl} target="_blank">{name}</a>
+                  <a href={theyWorkForUsUrl} target="_blank"
+                    rel="noopener noreferrer"
+                    style={{color: color}}
+                  >
+                    {name}
+                  </a>
                   <a href={videoUrl} target="_blank"
                     rel="noopener noreferrer"
                     style={{
