@@ -21,7 +21,7 @@ const thai_date = (str) => {
 const DayList = ({data}) => {
     const [query, setQuery] = stateFromQueryParam('q', StringParam)
     const [chairmanFilter, setChairmanFilter] = stateFromQueryParam(
-      'chariman',
+      'chairman',
       BooleanParam
     )
 
