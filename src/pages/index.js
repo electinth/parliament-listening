@@ -21,20 +21,21 @@ import { withPrefix } from "gatsby";
 
 const IndexPage = () => {
 
-  const [date] = stateFromQueryParam('date', StringParam)
-  const [dataset] = useState(
-    config.dateToDataset(date) || config.datasets[0]
-  )
+  const [date, setDate] = stateFromQueryParam('date', StringParam)
 
   const [data, setData] = useState({})
 
+  if(!date || !(date in config.dateToDataset)) {
+    setDate(config.datasets[0].date)
+  }
+
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios(withPrefix(`/data/${dataset.date}.json`))
+      const result = await axios(withPrefix(`/data/${date}.json`))
       setData(result.data)
     };
     fetchData();
-  }, [dataset])
+  }, [date])
 
   return <Layout>
     <SEO title="Home" />
@@ -44,20 +45,30 @@ const IndexPage = () => {
         fontSize: "2rem"
       }
     }}>
-      <select css={{
-          border: "0px", color: "#E1161F", background: "white",
-          width: "100%",
-          [media(DESKTOP_MIN_WIDTH)]: {
-            width: "auto"
-          }
-        }}>
+      <select
+          css={{
+            border: "0px", color: "#E1161F", background: "white",
+            width: "100%",
+            [media(DESKTOP_MIN_WIDTH)]: {
+              width: "auto"
+            }
+          }}
+          onChange={(e) => {
+            setData({})
+            setDate(e.target.value)
+          }}
+        >
         {
           config.datasets.map(d => {
-            return <option key={d.name} value={d.file}>{d.name}</option>
+            return <option key={d.name} value={d.date}>{d.name}</option>
           })
         }
       </select>
     </h2>
+    {
+      !data.statistics &&
+      <div align="center">กำลังโหลดข้อมูล</div>
+    }
     {
       data.statistics &&
       <>
@@ -75,7 +86,7 @@ const IndexPage = () => {
                 leftDuration={data.statistics.total_gov_team_duration}
                 rightDuration={data.statistics.total_opposition_team_duration}
                 leftColor="#0E64B9" rightColor="#E1161F"
-                remark="สัดส่วนคำนวณจากเวลารวมของ ส.ส. ทั้งหมด"
+                remark={config.dateToDataset[date].remark.gov_opposition_stats}
               />
             </StatBox>
             <StatBox>
@@ -84,7 +95,7 @@ const IndexPage = () => {
                 leftDuration={data.statistics.total_debate_duration}
                 rightDuration={data.statistics.total_opposing_duration}
                 leftColor="#FFFFFF" rightColor="#000000"
-                remark="สัดส่วนคำนวณจากเวลารวมของ ส.ส. และ ส.ว."
+                remark={config.dateToDataset[date].remark.debating_opposing_stats}
               />
             </StatBox>
             <div style={{height: "1.5rem", width: "100%", clear: "both"}}></div>

@@ -45,7 +45,7 @@ const EventCard = ({
                     rel="noopener noreferrer"
                     style={{color: color}}
                   >
-                    {name}
+                    {name.trim()}
                   </a>
                   <a href={videoUrl} target="_blank"
                     rel="noopener noreferrer"

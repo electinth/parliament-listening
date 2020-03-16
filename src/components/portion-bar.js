@@ -43,7 +43,7 @@ const PortionBar = ({
       </div>
     </div>
     <div style={{clear: "both", color: "gray"}}>
-      *{remark}
+      { remark && <span>*{remark}</span> }
     </div>
   </div>
 }

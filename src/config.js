@@ -1,9 +1,4 @@
-const datasets = [
-  {
-    name: "25 ก.ค. 2562 แถลงนโยบาย​ฯ",
-    date: "25-07-2562"
-  }
-]
+import { datasets } from "./models/information"
 
 const dateToDataset = {}
 
@@ -13,7 +8,7 @@ datasets.forEach(d => {
 
 const config = {
   datasets: datasets,
-  dateToDataset: (d) => dateToDataset[d]
+  dateToDataset: dateToDataset,
 }
 
 export default config
